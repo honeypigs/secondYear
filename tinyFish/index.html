@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TinyFish</title>
+	<style>
+	body {
+		padding: 10px;
+	}
+
+	.bg {
+		width: 800px;
+		height: 600px;
+		margin:0 auto;
+	}
+
+	#canvas-warrap {
+		position: relative;
+		width: 800px;
+		height: 600px;
+		margin: 0px;
+	}
+
+	#canvas1 {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		z-index: 1;
+	}
+
+	#canvas2 {
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		z-index: 0;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="bg">
+		<div id="canvas-warrap">
+			<canvas id="canvas1" width = "800" height = "600">
+				
+			</canvas>
+			<canvas id="canvas2" width = "800" height = "600">
+				
+			</canvas>
+		</div>
+	</div>
+	<script src = "js/ane.js"></script>
+	<script src = "js/commonFunctions.js"></script>
+	<script src = "js/main.js"></script>
+</body>
+</html>
