@@ -12,6 +12,7 @@ var deltaTime = 0;
 
 var bgPic = new Image();
 var ane = new aneObj();
+var fruit = new fruitObj();
 
 document.body.onload = game;
 
@@ -22,8 +23,9 @@ function game() {
 
 function init() {
 	//get cnavas
-	//draw background
+	//draw background!
 	ane.init();
+	fruit.init();
 }
 
 function gameloop() {
@@ -35,5 +37,5 @@ function gameloop() {
 	bgPic.src = "img/background.jpg";
 	ctx2.drawImage(bgPic,0,0,canvasWidth,canvasHight);
 	ane.draw();
-
+	fruit.draw();
 }
