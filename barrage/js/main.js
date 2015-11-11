@@ -1,104 +1,75 @@
+require.config({
+ urlArgs: "bust=" + (new Date()).getTime()
+});
+
+require(["js/animate.js"],function(){
+	require(["js/judgement.js"],function(){
+		setInterval(function (){
+			loop();
+		},100);
+	});
+});
+
+
 var barrage = {
 	'window' : document.getElementById('curtain'),
 	'barrageList' : {
 		'waitList' : [],
-		'movingList' : []
-	},
-	'barrageItem' : {
-		'content' : '',
-		'location' : '',
-		'color' : '',
-		'size' : 16,
-		'holding' : 1500,
-		'num' : 0
+		'movingList' : [],
+		'topWaitList' : [],
+		'topMovingList' : [],
+		'bottomWaitList' : [],
+		'bottomMovingList' : []
 	}
 };
+
+
 
 var getData = function (){
-// 	if (barrage.barrageList.waitList.length === 0) {
-// 		$ajax ({
-// 			type: "GET",
-// 			url: "",
-// 			dataType: "script",
-// 			success : function () {
-// 				//...barrage item
-// 				}
-// 		});
-// 	}
-	var color = ['black','red','blue'];
-
-	for (var i = 0; i < 3; i++) {
-		barrage.barrageItem = {
-			'content' : 'hehehehhe',
-			'location' : 'top',
-			'color' : color[i],
-			'size' : 16,
-			'holding' : 1500,
-			'num' : 0
-		};
-		barrage.barrageList.waitList.push(barrage.barrageItem);
-		barrage.barrageList.movingList.push(barrage.barrageItem);
-
+	if (barrage.barrageList.waitList.length === 0) {
+		var url = 'js/data.php?isAjax=1';
+		var data ={};
+		$.get(url,data,function(res){
+			res = JSON.parse(res);
+						console.log(res);
+		for (var i = 0; i < res.length; i++) {
+			if (res[i].location === 'normal') {
+				barrage.barrageList.waitList.push(res[i]);
+			} else if (res[i].location === 'top') {
+				barrage.barrageList.topWaitList.push(res[i]);
+			} else if (res[i].location === 'bottom') {
+				barrage.barrageList.bottomWaitList.push(res[i]);
+			}
+		}
+		return barrage;
+		});
 	}
-	return barrage;
 };
 
-
-
-var normal = function (){
-	var item = document.createElement('div');
-	item.setAttribute("class","item");
-	item.innerHTML = barrage.barrageList.movingList[0].content;
-	item.style.color = barrage.barrageList.movingList[0].color;
-	item.style.left = barrage.window.offsetWidth + 'px';
-	item.style.top = Math.floor(Math.random() * barrage.window.clientHeight / 3) + 'px';
-	barrage.window.appendChild(item);
-	barrage.barrageList.movingList.shift();
-	barrage.barrageList.movingList.push(barrage.barrageList.waitList[0]);
-	barrage.barrageList.waitList.shift();
-	item.style.left = -item.offsetWidth + 'px';
-};
-
-var TOP = function (){
-	var item = document.createElement('div');
-	item.setAttribute("class","item");
-	item.innerHTML = barrage.barrageList.movingList[0].content;
-	item.style.color = barrage.barrageList.movingList[0].color;
-	item.style.left = barrage.window.offsetWidth / 2 + 'px';
-	item.style.top = barrage.barrageItem.size * (barrage.barrageItem.num++ % 5) + 'px';
-	barrage.window.appendChild(item);
-	barrage.barrageList.movingList.shift();
-	barrage.barrageList.movingList.push(barrage.barrageList.waitList[0]);
-	barrage.barrageList.waitList.shift();
-	console.log(barrage.barrageItem.num);
-};
-
-var BOTTOM = function (){
-	var item = document.createElement('div');
-	item.setAttribute("class","item");
-	item.innerHTML = barrage.barrageList.movingList[0].content;
-	item.style.color = barrage.barrageList.movingList[0].color;
-	item.style.left = barrage.window.offsetWidth / 2 + 'px';
-	item.style.bottom = barrage.barrageItem.size * (barrage.barrageItem.num++ % 5) + 'px';
-	barrage.window.appendChild(item);
-	barrage.barrageList.movingList.shift();
-	barrage.barrageList.movingList.push(barrage.barrageList.waitList[0]);
-	barrage.barrageList.waitList.shift();
-	console.log(barrage.barrageItem.num);
-};
-
+// getData();
 
 function loop(){
-	if (barrage.barrageList.waitList.length === 0) {
+	Judgement();
+	if (barrage.barrageList.waitList.length === 0 || barrage.barrageList.topWaitList.length === 0 || barrage.barrageList.bottomWaitList.length === 0) {
 		getData();
-	}else if(barrage.barrageList.waitList.length !== 0) {
+	}
+	if (barrage.barrageList.waitList.length !== 0) {
+		NORMAL();
+	}
+	if (barrage.barrageList.topWaitList.length !== 0) {
 		TOP();
+	}
+	if (barrage.barrageList.bottomWaitList.length !== 0) {
+		BOTTOM();
 	}
 }
 
-// setInterval(function (){
-// 	loop();
-// },barrage.barrageItem.holding);
+
+
+
+
+
+
 
 
 
