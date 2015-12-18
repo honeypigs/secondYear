@@ -8,11 +8,11 @@ for (var i = 0; i < a.length; i++) {
     b[j] = a[i].parentNode;
     j++;
   }
-};
+}
 for (var i = 0; i < b.length; i++) {
 	c[i] = b[i].innerHTML.match(/[^(\<\/?td\>)(&nbsp)[a-z]/g);
 	console.log(c[i].join(""));
-};
+}
 
 
 
