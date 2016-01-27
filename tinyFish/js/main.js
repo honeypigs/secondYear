@@ -21,6 +21,25 @@ var baby;
 var mx;
 var my;
 
+
+var babyTail = [];
+var babyEye = [];
+var babyBody = [];
+
+
+var bigTail = [];
+var bigEye = [];
+var bigBodyOra = [];
+var bigBodyBlue = [];
+
+var data;
+
+var wave;
+
+var dust;
+var dustPic = [];
+
+
 document.body.onload = game;
 
 function game() {
@@ -41,7 +60,7 @@ function init() {
 
 
 	//draw background!
-	bgPic.src = "img/background.jpg";
+	bgPic.src = "./img/background.jpg";
 
 	canvasWidth = canvas1.width;
 	canvasHight = canvas1.height;
@@ -60,6 +79,56 @@ function init() {
 
 	mx = canvasWidth * 0.5;
 	my = canvasHight * 0.5;
+
+	for(var i = 0;i < 8; i++) {
+		babyTail[i] = new Image();
+		babyTail[i].src = "./img/babyTail" + i + ".png";
+	}
+
+	for(var i = 0;i < 2; i++) {
+		babyEye[i] = new Image();
+		babyEye[i].src = "./img/babyEye" + i + ".png";
+	}
+
+	for(var i = 0;i < 20; i++) {
+		babyBody[i] = new Image();
+		babyBody[i].src = "./img/babyFade" + i + ".png";
+	}
+
+	for(var i = 0;i < 8; i++) {
+		bigTail[i] = new Image();
+		bigTail[i].src = "./img/bigTail" + i + ".png";
+	}
+
+	for(var i = 0;i < 2; i++) {
+		bigEye[i] = new Image();
+		bigEye[i].src = "./img/bigEye" + i + ".png";
+	}
+
+	data = new dataObj();
+
+	for (var i = 0;i < 8; i++) {
+		bigBodyBlue[i] = new Image();
+		bigBodyOra[i] = new Image();
+
+		bigBodyOra[i].src = "./img/bigSwim" + i + ".png";
+		bigBodyBlue[i].src = "./img/bigSwimBlue" + i + ".png";
+
+	}
+
+	ctx1.font = "30px Verdana";
+	ctx1.textAlign = "center";
+
+	wave = new waveObj();
+	wave.init();
+
+	for(var i = 0;i < 7; i++) {
+		dustPic[i] = new Image();
+		dustPic[i].src = "./img/dust" + i + ".png";
+	}
+	dust = new dustObj();
+	dust.init();
+
 }
 
 function gameloop() {
@@ -79,14 +148,20 @@ function gameloop() {
 	mom.draw();
 	baby.draw();
 	momFruitCollision();
-
-
+	momBabyCollision();
+	
+	data.draw();
+	wave.draw();
+	dust.draw();
 }
 
 
 function onMouseMove(e) {
-	if (e.offSetX || e.layerX) {
-		mx = e.offSetX == undefined ? e.layerX : e.offSetX;
-		my = e.offSetY == undefined ? e.layerY : e.offSetY;
+	if (!data.gameOver) {
+
+		if (e.offSetX || e.layerX) {
+			mx = e.offSetX == undefined ? e.layerX : e.offSetX;
+			my = e.offSetY == undefined ? e.layerY : e.offSetY;
+		}
 	}
 }
