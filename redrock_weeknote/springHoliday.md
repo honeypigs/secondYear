@@ -5,9 +5,9 @@
 与之相比canvas则更适合用来做色彩丰富的图片处理以及游戏
 2016/1/27  
 ----------
-- 完成一个小游戏[tinyfish](git@github.com:honeypigs/secondYear/tinyFish.git)
+- 完成一个小游戏[tinyfish](https://github.com/honeypigs/secondYear/tree/master/tinyFish)
 
-- 完成后的收获	[note](git@github.com:honeypigs/secondYear/redrock_weeknote/tinyFish.git)
+- 完成后的收获	[note](https://github.com/honeypigs/secondYear/blob/master/redrock_weeknote/tinyfish.md)
 2016/1/28 
 ----------
 - 了解了基本的grunt配置，
