@@ -8,4 +8,8 @@
 完成一个小游戏[https://github.com/honeypigs/secondYear/tree/master/tinyFish](tinyfish)
 
 完成后的收获[https://github.com/honeypigs/secondYear/blob/master/redrock_weeknote/tinyfish.md](http://github.com/honeypigs/secondYear/redrock_weeknote/tinyfish "mark")
+2016/1/28 
+----------
+了解了基本的grunt配置，
 
+besiege第一艘飞机出炉
