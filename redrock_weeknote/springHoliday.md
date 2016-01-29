@@ -5,11 +5,17 @@
 与之相比canvas则更适合用来做色彩丰富的图片处理以及游戏
 2016/1/27  
 ----------
-完成一个小游戏[https://github.com/honeypigs/secondYear/tree/master/tinyFish](tinyfish)
+- 完成一个小游戏[git@github.com:honeypigs/secondYear/tinyFish.git](tinyfish)
 
-完成后的收获[https://github.com/honeypigs/secondYear/blob/master/redrock_weeknote/tinyfish.md](http://github.com/honeypigs/secondYear/redrock_weeknote/tinyfish "mark")
+- 完成后的收获	[git@github.com:honeypigs/secondYear/redrock_weeknote/tinyFish.git](http://github.com/honeypigs/secondYear/redrock_weeknote/tinyfish "mark")
 2016/1/28 
 ----------
-了解了基本的grunt配置，
+- 了解了基本的grunt配置，
+ 
+- besiege第一艘飞机出炉
 
-besiege第一艘飞机出炉
+2016/1/29 14:51:35 
+----------
+- yeoman安装与使用
+- bower安装及使用
+- mocha & chai（**mark** later）
