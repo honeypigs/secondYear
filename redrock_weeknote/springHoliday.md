@@ -78,4 +78,4 @@ http权威指南三章
 
 重新开始
 
-开始写blog
+blog basic 
