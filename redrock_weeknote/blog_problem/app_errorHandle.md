@@ -42,3 +42,6 @@
 在**开发环境**中即`app.get('env') === 'development'`，error的值为其本身。
 
 在**生产环境**中error的值为一个对象，其中应该是错误日志而不是错误对象本身。
+
+
+## `./bin/www` 中的 `onError` 和 `onListening` 函数用于处理端口错误，并没有理解。留待以后学习再次mark.##
