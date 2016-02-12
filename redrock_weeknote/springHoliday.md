@@ -78,4 +78,13 @@ http权威指南三章
 
 重新开始
 
-blog basic 
+blog basic
+
+blog相关node[blog_problem](https://github.com/honeypigs/secondYear/tree/master/redrock_weeknote/blog_problem)
+
+2016/2/12 14:13:44 
+----------
+
+博客基本结构实现
+
+
