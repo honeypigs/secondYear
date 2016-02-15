@@ -92,5 +92,12 @@ blog相关node[blog_problem](https://github.com/honeypigs/secondYear/tree/master
 
 博客基本功能实现
 
+2016/2/15 18:47:18 
+----------
+
+配置服务器Nodejs和mongodb（未完成）
+
+博客功能实现。准备页面美化。
+
 
 
