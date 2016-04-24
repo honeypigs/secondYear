@@ -3,31 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Barrge</title>
-	<style type="text/css">
-		video {
-			display: block;
-			margin :10px auto;
-		}
-	</style>
-	<script src = "modules/reactjs/react.min.js"></script>
+	<link rel="stylesheet" href="public/css/main.css">
+	<script src  = "modules/jquery/jquery.js"></script>
 </head>
 <body>
-	<video src="" width = "800" height = "500" controls = "controls"></video>
+	<div id = "bg"></div>
 </body>
-<script type="text/jsx">
-	var barrageBox = React.createClass({
-	render: function () {
-		return (
-			<div className = "barrageBox">
-				hello,world!
-			</div>
-		);
-	}
-});
-
-React.render(
-	<barrageBox />,
-	document.querySelector("video");
-);
-</script>
+<script src = "public/js/bg.js"></script>
+<script src = "public/js/barrage.js"></script>
+<script src = "public/js/main.js"></script>
 </html>

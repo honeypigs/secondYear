@@ -1,0 +1,28 @@
+#bg {
+	position: absolute;
+	margin: auto;
+	left: 0;top: 0;right: 0;bottom: 0;
+	height: 600px;
+	width: 800px;
+	background-color: gray;
+}
+
+.barrage {
+	font-size: "Microsoft YaHei",Arial,Helvetica,sans-serif;
+ 	white-space: nowrap;
+	position: absolute;
+	color: white;
+	font-weight: bold;
+ 	opacity: 1;
+	-webkit-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;  
+	-moz-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;  
+	text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;   
+	*filter: Glow(Color=#000, Strength=1);  
+	-webkit-transition: left 5s linear , opacity 2s linear ;
+	-o-transition: left 5s linear , opacity 2s linear ;
+	transition: left 5s linear , opacity 2s linear ;
+	-webkit-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0); 
+}

@@ -65,6 +65,6 @@
 
 
 ## 正则表达式工具类 ##
-见my git/secondYear/RegularExpression/regex
+见secondYear/RegularExpression/regex
 ## php简易模板引擎 ##
-见my git/secondYear/RegularExpression/template
+见secondYear/RegularExpression/template
